@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1021006975968",
+    "project_id": "fruitix-d0a2c",
+    "storage_bucket": "fruitix-d0a2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021006975968:android:339a03b5d3955d96129185",
+        "android_client_info": {
+          "package_name": "com.example.Activities.fruitix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021006975968-anhiqtapc46jqektsaado9snlk8gmf68.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.Activities.fruitix",
+            "certificate_hash": "7e48c6305f08b39d9e726ceeea2e1a4693f17a25"
+          }
+        },
+        {
+          "client_id": "1021006975968-arq5e84o7o6v20jpibba15pjqrvl3fcu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCalQuwdJWWW7HpQp-I8l11zzoGH7Asw0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021006975968-arq5e84o7o6v20jpibba15pjqrvl3fcu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

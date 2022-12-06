@@ -1,0 +1,6 @@
+
+  {
+    "modelFIle": "Fruit_disease.tflite",
+    "labelFile": "label.txt",
+    "modelType": "IMAGE_LABELING"
+  }

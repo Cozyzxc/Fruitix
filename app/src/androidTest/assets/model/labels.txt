@@ -1,0 +1,15 @@
+Healthy_Watermelon
+Watermelon_blossom_end_rot
+Watermelon_Anthracnose
+Orange_Scab
+Orange_Healthy
+Orange_Bacterial_Citrus_Canker
+Mango_Healthy
+Mango_Bacterial_Canker
+Mango_Anthracnose
+Banana_Healthy
+Banana_Crown_Rot
+Banana_Anthracnose
+Apple_Scab
+Healthy_Apple
+Apple_Black_Rot_Canker

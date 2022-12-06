@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup_add_post"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.appbar.AppBarLayout
+
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Widget.Design.CollapsingToolbar"
+        app:layout_constraintBottom_toTopOf="@+id/popup_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+        <androidx.appcompat.widget.Toolbar
+
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/popup_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.0"
+            app:popupTheme="@style/ShapeAppearance.Material3.Tooltip" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <ImageView
+        android:id="@+id/popup_user_img"
+        android:layout_width="57dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/popup_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/popup_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/popup_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/popup_edittext_style"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup_title" />
+
+    <EditText
+        android:id="@+id/popup_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/popup_edittext_style"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toStartOf="@+id/popup_user_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/popup_img"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup_description"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+
+        android:id="@+id/popup_add"
+        android:layout_width="64dp"
+        android:layout_height="49dp"
+        android:background="@drawable/circle_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/popup_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup_img"
+        app:layout_constraintVertical_bias="0.428"
+        app:srcCompat="@drawable/ic_baseline_create_24" />
+
+    <TextView
+        android:id="@+id/txtGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap to import Image"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/popup_img"
+        app:layout_constraintEnd_toEndOf="@+id/popup_img"
+        app:layout_constraintStart_toStartOf="@+id/popup_img"
+        app:layout_constraintTop_toBottomOf="@+id/popup_description" />
+
+    <ImageButton
+        android:id="@+id/popup_talk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_baseline_mic_24"
+        app:layout_constraintBottom_toBottomOf="@+id/popup_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toStartOf="@+id/popup_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
