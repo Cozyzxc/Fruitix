@@ -96,6 +96,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.core.widget.NestedScrollView
+        android:background="@drawable/black_gradient"
         android:id="@+id/confidence_NSview"
         android:layout_width="match_parent"
         android:layout_height="141dp"

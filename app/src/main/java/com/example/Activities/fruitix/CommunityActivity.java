@@ -94,7 +94,7 @@ public class CommunityActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
 
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.community);
 
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -192,11 +192,9 @@ public class CommunityActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK && data != null) {
                     ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     popupTitle.setText(text.get(0));
-                    popupDescription.setText(text.get(0));
                 }else{
                     ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    popupDescription
-                            .setText(text.get(0));
+                    popupDescription.setText(text.get(0));
                 }
                 break;
         }

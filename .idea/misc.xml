@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/drawable-v24/loading_shape.xml" value="0.1635" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/drawable/black_gradient.xml" value="0.1635" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/drawable/button_bg.xml" value="0.1635" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/drawable/circle_bg.xml" value="0.1635" />
@@ -15,8 +16,9 @@
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_account.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_community.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
+        <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_fruit.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_home.xml" value="0.24157303370786518" />
-        <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_info.xml" value="0.25" />
+        <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_info.xml" value="0.22" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_post_detail.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/activity_register.xml" value="0.25" />
@@ -24,12 +26,15 @@
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/app_bar_home.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/content_home.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/fragment_community.xml" value="0.25" />
+        <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/fruit_row_item.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/input_bg.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/nav_header_home.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/popup_add_post.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/row_comment.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/layout/row_post_item.xml" value="0.25" />
         <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/menu/menu_navigation.xml" value="0.18" />
+        <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/Cozy/AndroidStudioProjects/Fruitix/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1635" />
       </map>
     </option>
   </component>

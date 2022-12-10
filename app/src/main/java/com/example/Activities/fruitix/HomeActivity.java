@@ -24,12 +24,14 @@ import android.widget.Toast;
 
 import com.example.Activities.fruitix.Fragment.CommunityFragment;
 import com.example.Activities.fruitix.ml.FruitDisease;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
@@ -56,12 +58,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().setTitle("Detection");
-
-
-
-
-
-
 // Bottom Navigation View
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -128,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-//activity result of fruit detection
+    //activity result of fruit detection
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
@@ -204,11 +200,12 @@ public class HomeActivity extends AppCompatActivity {
                 confidence.setVisibility(View.VISIBLE);
             }
 
+
             clickHere.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    Intent intent = new Intent(HomeActivity.this, ForgotPasswordActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, InfoActivity.class);
                     startActivity(intent);
                 }
             });
