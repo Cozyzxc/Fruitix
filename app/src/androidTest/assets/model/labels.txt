@@ -13,3 +13,4 @@ Banana_Anthracnose
 Apple_Scab
 Healthy_Apple
 Apple_Black_Rot_Canker
+Unknown_Fruit

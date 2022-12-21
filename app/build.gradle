@@ -6,7 +6,10 @@ plugins {
 
 
 android {
-
+    aaptOptions {
+        noCompress "tflite"
+        // or noCompress "lite"
+    }
     compileSdk 32
 
     defaultConfig {
@@ -49,6 +52,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.google.mlkit:linkfirebase:17.0.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
@@ -66,7 +70,7 @@ dependencies {
     // ...
     // Object detection & tracking feature with custom bundled model
 
-
+    implementation 'com.google.mlkit:object-detection-custom:17.0.0'
 
 
 

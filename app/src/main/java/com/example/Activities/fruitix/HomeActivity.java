@@ -1,12 +1,6 @@
 package com.example.Activities.fruitix;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -14,31 +8,34 @@ import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.Activities.fruitix.Fragment.CommunityFragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.Activities.fruitix.ml.FruitDisease;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
-
 import org.tensorflow.lite.DataType;
+import org.tensorflow.lite.support.common.FileUtil;
+import org.tensorflow.lite.support.label.TensorLabel;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
     private Button picture;
@@ -52,16 +49,14 @@ public class HomeActivity extends AppCompatActivity {
     int imageSize = 224;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().setTitle("Detection");
-// Bottom Navigation View
+
+        // Bottom Navigation View
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-
 
 
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -124,10 +119,8 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    //activity result of fruit detection
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
         if (requestCode == 1 && resultCode == RESULT_OK) {
             Bitmap image = (Bitmap) data.getExtras().get("data");
             int dimension = Math.min(image.getWidth(), image.getHeight());
@@ -142,20 +135,23 @@ public class HomeActivity extends AppCompatActivity {
             classifyImage(image);
 
 
+
+
         }
+
+
         super.onActivityResult(requestCode, resultCode, data);
-
-
     }
 
-    //classify image of detected fruit
+
+
     private void classifyImage(Bitmap image) {
         try {
             FruitDisease model = FruitDisease.newInstance(getApplicationContext());
+
             TensorBuffer inputFeature = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
             ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4 * imageSize * imageSize * 3);
             byteBuffer.order(ByteOrder.nativeOrder());
-
 
             int[] intValue = new int[imageSize * imageSize];
             image.getPixels(intValue, 0, image.getWidth(), 0, 0, image.getWidth(), image.getHeight());
@@ -176,29 +172,41 @@ public class HomeActivity extends AppCompatActivity {
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
             float[] confidences = outputFeature0.getFloatArray();
+//find the index of the class with the biggest confidence
             int maxPos = 0;
-            float maxConfidence = 0;
+            float maxConfidence = 0.60f;
+
             for (int i = 0; i < confidences.length; i++) {
                 if (confidences[i] > maxConfidence) {
                     maxConfidence = confidences[i];
                     maxPos = i;
 
                 }
+                }
 
-            }
             String[] classes = {"Watermelon Healthy", "Watermelon Blossom End Rot", "Watermelon Anthracnose",
                     "Mango Healthy", "Mango Bacterial Canker", "Mango Anthracnose",
-                    "Orange_Scab", "Orange_Healthy",
-                    "Orange_Bacterial_Citrus_Canker", "Banana Healthy", "Banana Crown Rot",
-                    "Banana Anthracnose", "Apple Scab", "Apple Healthy", "Apple Black Rot Canker"};
-
+                    "Orange Scab", "Orange Healthy",
+                    "Orange Bacterial Citrus Canker", "Banana Healthy", "Banana Crown Rot",
+                    "Banana Anthracnose", "Apple Scab", "Apple Healthy", "Apple Black Rot Canker", "Unknown Fruits"};
             result.setText(classes[maxPos]);
+
+
+
+
+
+
             String s = "";
-            for (int i = 0; i < classes.length; i++) {
+            int i;
+            for (i = 0; i < classes.length; i++) {
                 s += String.format("%s: %.1f%%\n", classes[i], confidences[i] * 100);
                 confidence.setText(s);
                 confidence.setVisibility(View.VISIBLE);
+
             }
+
+
+
 
 
             clickHere.setOnClickListener(new View.OnClickListener() {
@@ -209,6 +217,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            model.close();
 
         } catch (IOException e) {
             e.printStackTrace();
